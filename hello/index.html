@@ -11,17 +11,14 @@
     <div id="app">
         {{ message }}, I'm {{ firstName }}
     </div>
-    <hr>
     <div id="app-2">
         <span v-bind:title=" message ">
         Hover your mouse over me for a few seconds
         to see my dynamically bound title!
     </div>
-    <hr>
     <div id="app-3">
       <span v-show="seen">Now you see me</span>
     </div>
-    <hr>
     <div id="app-4">
         <ol>
             <li v-for="todo in todos">
@@ -29,18 +26,15 @@
             </li>
         </ol>
     </div>
-    <hr>
     <div id="app-5">
         <p>{{ message }}</p>
         <button @click="reverseMessage">Reverse Message</button>
         <!-- v-on:click = @click -->
     </div>
-    <hr>
     <div id="app-6">
         <p>{{ message }}</p>
         <input v-model="message">
     </div>
-    <hr>
     <div id="app-7">
         <ol>
             <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
