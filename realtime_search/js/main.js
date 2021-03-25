@@ -6,15 +6,12 @@ var app = new Vue({
         message: '',
     },
     watch: {
-        keyword: function(newKeyword, oldKeyword) {
-            // console.log(newKeyword)
+        keyword: function() {
             this.message = 'Waiting for you stop typing...'
             this.debounceGetAnswer()
         }
     },
     created: function() {
-        // this.keyword = 'JavaScript'
-        // this.getAnswer()
         this.debounceGetAnswer = _.debounce(this.getAnswer, 1000)
     },
     methods: {

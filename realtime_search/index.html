@@ -16,7 +16,6 @@
         </p>
         <ul>
             <li v-for="item in items">
-                <!-- {{ item.title }} -->
                 <a v-bind:href="item.url" target="_blank">{{ item.title }}</a> LGTM:{{ item.likes_count }}
             </li>
         </ul>
