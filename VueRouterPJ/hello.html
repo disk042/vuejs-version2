@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue Router</title>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/top">Go to Top</router-link>
+        <router-link to="/users/123">Go to User</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+    <script>
+        const Top = {
+            template: '<div>Top</div>'
+        }
+
+        const User = {
+            template: '<div>User {{ $route.params.userId }}</div>'
+        }
+
+        const router = new VueRouter({
+            routes: [{
+                path: '/top',
+                component: Top,
+            }, {
+                path: '/users/:userId',
+                component: User,
+            }]
+        })
+
+        const app = new Vue({
+            router
+
+        }).$mount('#app')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect - Vue Router</title>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/">Home</router-link>
+        <router-link to="/a">A</router-link>
+        <router-link to="/b">B</router-link>
+        <router-view></router-view>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+
+    <script>
+        const B = {
+            template: '<div><h2>This is B.</h2></div>'
+        }
+        const router = new VueRouter({
+            routes: [{
+                path: '/a',
+                redirect: {
+                    name: 'page-b'
+                },
+            }, {
+                name: 'page-b',
+                path: '/b',
+                component: B,
+            }]
+        })
+
+        const app = new Vue({
+            router
+        }).$mount('#app')
+    </script>
+</body>
+
+</html>
